@@ -5,12 +5,14 @@ import random
 # Generate random number
 num_to_guess = random.randint(1, 100)
 print('Welcome to my random number guesser! I have picked a number between 1 and 100. Your job is to guess it.')
-while True:
+shouldContinue = True
+while shouldContinue:
     # get user input
-    while True:
+    shouldContinue2 = True
+    while shouldContinue2:
         try:
             int_guess = int(input('What number > '))
-            break
+            shouldContinue2 = False
         except ValueError:
             print("That isn't a valid number")
 
@@ -22,4 +24,4 @@ while True:
         print('bigger')
     else:
         print('correct!')
-        break
+        shouldContinue = False
